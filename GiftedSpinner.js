@@ -4,17 +4,17 @@ var React = require('react');
 
 var {
   View,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   ProgressBarAndroid,
   Platform
 } = require('react-native');
 
 var GiftedSpinner = React.createClass({
-  
+
   _getSpinner() {
     if (Platform.OS === 'android') {
       return (
-        <ProgressBarAndroid 
+        <ProgressBarAndroid
           style={{
             height: 20,
           }}
@@ -24,7 +24,7 @@ var GiftedSpinner = React.createClass({
       );
     } else {
       return (
-        <ActivityIndicatorIOS
+        <ActivityIndicator
           animating={true}
           size="small"
           {...this.props}
@@ -32,7 +32,7 @@ var GiftedSpinner = React.createClass({
       );
     }
   },
-  
+
   render() {
     return (
       <View>
@@ -40,7 +40,7 @@ var GiftedSpinner = React.createClass({
       </View>
     );
   },
-  
+
 });
 
 
